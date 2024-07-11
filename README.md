@@ -1,5 +1,5 @@
 ﻿# What is AutoTelegramAdmin
-This is a program for automatically writing posts in Telegram
+This is a program for automatically writing posts in Telegram. It will find the picture and write the text to it. So all you need is to specify the subject of the post.
 # Quick start
 ### Prepare a Telegram bot
 
