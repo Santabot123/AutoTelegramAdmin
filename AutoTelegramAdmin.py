@@ -8,6 +8,9 @@ from langchain_community.llms import Ollama
 from similarity import get_similarity_score,add_new
 
 
+mistral_llm = Ollama(model="mistral")
+openhermes_llm = Ollama(model="openhermes")
+
 def create_topic(subject:str):
     ddsearch=Tools_handler.search()
     news_researcher=Agents_for_topics.news_researcher(tools=[ddsearch],llm=openhermes_llm)
@@ -56,12 +59,7 @@ def find_image(topic:str) -> str:
     image_url = image_resercher_task.execute()
     return image_url
 
-
-if __name__ == '__main__':
-
-    mistral_llm = Ollama(model="mistral")
-    openhermes_llm = Ollama(model="openhermes")
-    def create_post(channel_name:str, token:str, number_of_words:int, channel_theme:str = None,topic= None):
+def create_post(channel_name:str, token:str, number_of_words:int, channel_theme:str = None,topic= None):
         os.environ["TELEGRAM_POSTER_TOKEN"]=token
         if topic == None:
             similarity=1
@@ -87,9 +85,12 @@ if __name__ == '__main__':
         return result, image_url, caption
 
 
-    # create_post(
-    #     channel_name='@YOUR_CHANNEL_NAME',
-    #     token="YOUR_BOT_TOKEN",
-    #     number_of_words=50,
-    #     topic='description Bye Bye, Earth anime'
-    # )
+# if __name__ == '__main__':
+#
+#
+#     create_post(
+#         channel_name='@YOUR_CHANNEL_NAME',
+#         token="YOUR_BOT_TOKEN",
+#         number_of_words=50,
+#         topic='description Bye Bye, Earth anime'  # PUT YOUR OWN TOPIC HERE
+#     )
