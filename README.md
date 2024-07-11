@@ -11,7 +11,7 @@ This is a program for automatically writing posts in Telegram
 
     git clone https://github.com/Santabot123/AutoTelegramAdmin.git
     cd AutoTelegramAdmin
-    pip install requirements.txt
+    pip install -r requirements.txt
 
 If you do not have [Ollama](https://ollama.com/), then install it.
 
